@@ -9,77 +9,30 @@
     <body>
         <div class="container">
             <a class="nor"></a>
-            <form>
-                <input type="text" class="answer" autofocus><button class="submit" onclick="check()">S</button>
-            </form>
-            <button class="gab_btn" onclick="gab_s()">Mostrar Gabarito</button>
+            <input type="text" class="answer" autofocus><button class="submit" onclick="check()">S</button>
+            <button class="gab_btn" onclick="javascript:$('.gab').css('display', 'block');">Mostrar Gabarito</button>
             <a class="gab" style="width: 500px; font-size: .65em;">
-                1- e obrigatorio o uso de avental de manga comprida, limpo e em condiçoes de trabalho<br />
-                2- utilizar os epi (equipamento de proteçao individual) sempre<br />
-                3- nao e permitido o uso de sandalias, chinelos ou sapatos abertos, bem como shorts, saias e blusinhas tipo "top" ou de alça<br />
-                4- e expressamentemente proibido o uso de lentes de contato durante os trabalhos de laboratorio<br />
-                5- e proibido usar joias (braceletes, aneis, colares, correntes, etc) e outros adornos<br />
-                6- manter o cabelo preso, as unhas cortadas e as maos limpas<br />
-                7- e proibido fumar, comer, beber ou mascar chiclete no laboratorio<br />
-                8- e proibido sentar nas bancadas ou no chao<br />
-                9- piercings e similares devem ser mantidos cobertos com esparadrapo ou micropore durante a presença em laboratorio<br />
-                10- esteja sempre certo da saida de emergencia, da localizaçao do chuveiro de emergencia e dos extintores de incendio<br />
-                11- durante as aulas praticas, os alunos nao poderao entrar no laboratorio ou sair dele sem a autorizaçao do professor<br />
-                12- e proibido correr ou fazer brincadeiras de qualquer especie dentro do laboratorio, em especial com reagentes ou vidrarias<br />
-                13- utilize a capela para manipular reagentes que liberem vapores ou solventes volateis<br />
-                14- nenhum material do laboratorio ou que tenha sido produzido nele deve ser ingerido, cheirado ou espalhado pela pele<br />
-                15- descartar as luvas no lixo do laboratorio e lavar bem as maos<br />
-                16- tenha cuidado ao manipular material aquecido ou bico de gas<br />
-                17- em qualquer acidente ou quebra de material comunicar o professor imediatamente<br />
-                18- ao termino do trabalho, encha as pissetas vazias limpe a bancada e todo o material utilizado. ao sair guarde os bancos sob as bancadas<br />
+                1- É obrigatório o uso de avental de manga comprida, limpo e em condições de trabalho<br/>
+                2- Utilizar os EPI (Equipamento de Proteção Individual) sempre<br/>
+                3- Não é permitido o uso de sandálias, chinelos ou sapatos abertos, bem como shorts, saias e blusinhas tipo "TOP" ou de alça<br/>
+                4- É expressamentemente proíbido o uso de lentes de contato durante os trabalhos de laboratório<br/>
+                5- É proíbido usar jóias (braceletes, anéis, colares, correntes, etc...) e outros adornos<br/>
+                6- Manter o cabelo preso, as unhas cortadas e as mãos limpas<br/>
+                7- É proíbido fumar, comer, beber ou mascar chiclete no laboratório<br/>
+                8- É proíbido sentar nas bancadas ou no chão<br/>
+                9- Piercings e similares devem ser mantidos cobertos com esparadrapo ou micropore durante a presença em laboratório<br/>
+                10- Esteja sempre certo da saída de emergência, da localização do chuveiro de emergência e dos extintores de incêndio<br/>
+                11- Durante as aulas práticas, os alunos não poderão entrar no laboratório ou sair dele sem a autorização do professor<br/>
+                12- É proíbido correr ou fazer brincadeiras de qualquer espécie dentro do laboratório, em especial com reagentes ou vidrarias<br/>
+                13- Utilize a capela para manipular reagentes que liberem vapores ou solventes voláteis<br/>
+                14- Nenhum material do laboratório ou que tenha sido produzido nele deve ser ingerido, cheirado ou espalhado pela pele<br/>
+                15- Descartar as luvas no lixo do laboratório e lavar bem as mãos<br/>
+                16- Tenha cuidado ao manipular material aquecido ou bico de gás<br/>
+                17- Em qualquer acidente ou quebra de material comunicar o professor imediatamente<br/>
+                18- Ao término do trabalho, encha as pissetas vazias limpe a bancada e TODO o material utilizado. Ao sair guarde os bancos sob as bancadas<br/>
             </a>
         </div>
-        <script>
-            const NORMAS = [
-	'e obrigatorio o uso de avental de manga comprida, limpo e em condiçoes de trabalho',
-	'utilizar os epi (equipamento de proteçao individual) sempre',
-	'nao e permitido o uso de sandalias, chinelos ou sapatos abertos, bem como shorts, saias e blusinhas tipo "top" ou de alça',
-	'e expressamentemente proibido o uso de lentes de contato durante os trabalhos de laboratorio',
-	'e proibido usar joias (braceletes, aneis, colares, correntes, etc) e outros adornos',
-	'manter o cabelo preso, as unhas cortadas e as maos limpas',
-	'e proibido fumar, comer, beber ou mascar chiclete no laboratorio',
-	'e proibido sentar nas bancadas ou no chao',
-	'piercings e similares devem ser mantidos cobertos com esparadrapo ou micropore durante a presença em laboratorio',
-	'esteja sempre certo da saida de emergencia, da localizaçao do chuveiro de emergencia e dos extintores de incendio',
-	'durante as aulas praticas, os alunos nao poderao entrar no laboratorio ou sair dele sem a autorizaçao do professor',
-	'e proibido correr ou fazer brincadeiras de qualquer especie dentro do laboratorio, em especial com reagentes ou vidrarias',
-	'utilize a capela para manipular reagentes que liberem vapores ou solventes volateis',
-	'nenhum material do laboratorio ou que tenha sido produzido nele deve ser ingerido, cheirado ou espalhado pela pele',
-	'descartar as luvas no lixo do laboratorio e lavar bem as maos',
-	'tenha cuidado ao manipular material aquecido ou bico de gas',
-	'em qualquer acidente ou quebra de material comunicar o professor imediatamente',
-	'ao termino do trabalho, encha as pissetas vazias limpe a bancada e todo o material utilizado. ao sair guarde os bancos sob as bancadas',
-];
-var num = Math.floor(Math.random() * NORMAS.length) + 1;
-
-document.addEventListener('keypress', function(e) {
-    if(e.keyCode == 13) {
-        check()
-    }
-});
-$('.nor').text("Assunto da Norma: " + num);
-function check() {
-    var inputed = $('.answer').val();
-    if(inputed.toLowerCase() == NORMAS[num - 1]) {
-        $('.submit').css("background-color", "green");
-    } else {
-        $('.submit').css("background-color", "red");
-        $('.submit').text("X");
-    }
-    console.log(num);
-}
-var gab = true;
-function gab_s() {
-    if(gab == true) {
-        $('.gab').css('display', 'block');
-        gab = false;
-    }
-}
-        </script>
+        <script src="data/js/main.js"></script>
+        <script src="data/js/full.js"></script>
     </body>
 </html>
